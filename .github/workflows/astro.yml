@@ -33,6 +33,10 @@ jobs:
         uses: actions/checkout@v3
       - name: Install, build, and deploy
         uses: withastro/action@v0
+        with:
+          path: .
+          node-version: 16
+          package-manager: npm
 
   deploy:
     environment:
