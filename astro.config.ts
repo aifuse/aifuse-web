@@ -1,6 +1,17 @@
 import { defineConfig } from "astro/config";
 import Atomico from "@atomico/astro";
 import NetlifyCMS from "astro-netlify-cms";
+import { remarkReadingTime } from './remark-reading-time.mjs'
+import sitemap from '@astrojs/sitemap'
+import tailwind from '@astrojs/tailwind'
+import astroI18next from 'astro-i18next'
+import image from '@astrojs/image'
+import robotsTxt from 'astro-robots-txt'
+import NetlifyCMS from 'astro-netlify-cms'
+import { VitePWA } from 'vite-plugin-pwa'
+
+import compress from 'astro-compress'
+import { manifest } from './src/utils/seoConfig'
 
 // https://astro.build/config
 export default defineConfig({
@@ -17,6 +28,25 @@ export default defineConfig({
   },
   integrations: [
     Atomico({ cssLiterals: { minify: true } }),
+    sitemap({
+      i18n: {
+        defaultLocale: 'en',
+        locales: {
+          en: 'en',
+          ta: 'ta-IN'
+        }
+      }
+    }),
+    tailwind(),
+    astroI18next(),
+    image({
+      serviceEntryPoint: '@astrojs/image/sharp'
+    }),
+    robotsTxt(),
+    compress({
+      html: true,
+      css: false
+    }),
     NetlifyCMS({
       config: {
         backend: {
