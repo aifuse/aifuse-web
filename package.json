@@ -1,6 +1,6 @@
 {
-  "name": "@aifuse/web",
-  "version": "0.0.1",
+  "name": "aifuse.com",
+  "version": "0.0.2",
   "private": true,
   "type": "module",
   "scripts": {
@@ -54,7 +54,7 @@
     "prettier-plugin-tailwindcss": "0.2.1",
     "sass": "1.57.1",
     "start-server-and-test": "1.15.2",
-    "vite-plugin-pwa": "0.14.0",
+    "vite-plugin-pwa": "0.14.0"
   },
   "dependencies": {
     "@astrojs/rss": "2.0.0",
