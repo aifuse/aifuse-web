@@ -6,13 +6,13 @@ let { title, description, image, ogImageAlt } = Astro.props;
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width" />
-    <HeadSEO
+    <!-- <HeadSEO
       title={title}
       description={description}
       image={image}
       ogImageAlt={ogImageAlt}
     />
-    <HeadHrefLangs />
+    <HeadHrefLangs /> -->
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.gstatic.com" />
     <link
@@ -26,16 +26,16 @@ let { title, description, image, ogImageAlt } = Astro.props;
     class="content-wrapper bg-background-primary font-sans text-light-slate leading-normal flex flex-col min-h-screen"
   >
     <div class="relative flex flex-col min-h-[100vh]">
-      <Navbar />
+      <!-- <Navbar /> -->
       <div class="container mx-auto flex flex-col xl:flex-row mt-24">
         <main class="relative w-full overflow-hidden px-2">
-          <Technologies />
+          <!-- <Technologies /> -->
           <slot />
         </main>
       </div>
-      <Social />
-      <Email />
+      <!-- <Social />
+      <Email /> -->
     </div>
-    <AppFooter />
+    <!-- <AppFooter /> -->
   </body>
 </html>
