@@ -1,34 +1,18 @@
 ---
-import i18next, { t } from "i18next";
-import HeadSEO from "organisms:HeadSEO";
-import { HeadHrefLangs } from "astro-i18next/components";
-import AppFooter from "molecules:AppFooter";
-import Social from "atoms:Social";
-import Email from "atoms:Email";
-import Navbar from "molecules:Navbar";
-import Technologies from "molecules:Technologies";
-import "../../styles/global.css";
-import { domain } from "@store:constants";
-
 let { title, description, image, ogImageAlt } = Astro.props;
-
-title = title || t("seo.title");
-description = description || t("seo.description");
-image = image ? `${domain}${image}` : `${domain}/uploads/me.webp`;
-ogImageAlt = ogImageAlt || t("seo.ogImageAlt");
 ---
 
-<html lang={i18next.language}>
+<html>
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width" />
-    <HeadSEO
+    <!-- <HeadSEO
       title={title}
       description={description}
       image={image}
       ogImageAlt={ogImageAlt}
     />
-    <HeadHrefLangs />
+    <HeadHrefLangs /> -->
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.gstatic.com" />
     <link
@@ -42,16 +26,16 @@ ogImageAlt = ogImageAlt || t("seo.ogImageAlt");
     class="content-wrapper bg-background-primary font-sans text-light-slate leading-normal flex flex-col min-h-screen"
   >
     <div class="relative flex flex-col min-h-[100vh]">
-      <Navbar />
+      <!-- <Navbar /> -->
       <div class="container mx-auto flex flex-col xl:flex-row mt-24">
         <main class="relative w-full overflow-hidden px-2">
-          <Technologies />
+          <!-- <Technologies /> -->
           <slot />
         </main>
       </div>
-      <Social />
-      <Email />
+      <!-- <Social />
+      <Email /> -->
     </div>
-    <AppFooter />
+    <!-- <AppFooter /> -->
   </body>
 </html>
